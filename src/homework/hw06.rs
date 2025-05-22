@@ -22,6 +22,7 @@ fn draw_christmas_tree(triangles: usize) {
         println!();
     }
 }
+
 fn main() {
     let triangles = 5;
     draw_christmas_tree(triangles);
