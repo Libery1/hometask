@@ -1,6 +1,5 @@
 use std::time::{SystemTime, UNIX_EPOCH};
 
-// Генерує псевдовипадкові числа [10..99] на основі часу
 fn gen_random_vector(n: usize) -> Vec<i32> {
     let seed = SystemTime::now()
         .duration_since(UNIX_EPOCH)
@@ -10,7 +9,6 @@ fn gen_random_vector(n: usize) -> Vec<i32> {
     (0..n).map(|_| rng.gen_range(10, 100)).collect()
 }
 
-// Простий лінійний конгруентний генератор (LCG)
 struct LcgRng(u32);
 
 impl LcgRng {
@@ -25,7 +23,6 @@ impl LcgRng {
     }
 }
 
-// Знаходить мінімальну суму сусідніх пар
 fn min_adjacent_sum(data: &[i32]) -> (i32, usize, usize) {
     data.windows(2)
         .enumerate()
@@ -34,7 +31,6 @@ fn min_adjacent_sum(data: &[i32]) -> (i32, usize, usize) {
         .unwrap()
 }
 
-// Виводить результат у заданому форматі
 fn print_result(data: &[i32], min_sum: i32, i1: usize, i2: usize) {
     println!("indexes: {}", (0..data.len()).map(|i| format!("{}.", i)).collect::<Vec<_>>().join(" "));
     println!("data: {:?}", data);
